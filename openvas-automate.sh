@@ -6,8 +6,8 @@ trap ctrl_c INT
 
 # --- CONFIGURATION ---
 
-USER=Admin
-PASS=OpenVAS
+USER=admin
+PASS=admin
 HOST=127.0.0.1
 PORT=9390
 
@@ -15,7 +15,7 @@ PORT=9390
 #SCAN_PROFILE=""
 SCAN_PROFILE="Full and very deep ultimate"
 
-FORMAT="PDF"
+FORMAT="XML"
 
 # A valid "alive_test" parameter
 # Defines how it is determined if the targets are alive
