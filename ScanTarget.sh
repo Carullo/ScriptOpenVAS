@@ -140,13 +140,18 @@ if [ $aborted -eq 0 ]; then
 
         FILENAME=$TARGET
 
-        out=$(omp_cmd --get-report $report_id --format $format_id > $FILENAME.$FORMAT )
+        create=0
 
-        if [ $? -ne 0 ]; then 
-                echo '[!] Failed getting report.'; 
-                echo "[!] Output: $out"
-                #end
-        fi
+	while true; do 
+
+		out=$(omp_cmd --get-report $report_id --format $format_id > $FILENAME.$FORMAT )
+
+        	if [ $? -eq 0 ]; then 
+                	echo '[+] Report generated!'
+			break;
+                	#end
+        	fi
+	done
 
         echo "[+] Scanning done."
 else
