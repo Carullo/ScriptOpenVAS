@@ -1,6 +1,6 @@
 ip_server=$(cat ip)
 
-scp root@$ip_server:/home/project/Scrivania/target.txt ./
+sshpass -p OpenVA94 scp -o "StrictHostKeyChecking no" $ip_server:/home/project/Scrivania/target.txt ./
 
 target=$(cat target.txt)
 
@@ -10,4 +10,4 @@ chmod +x openvas-automate.sh
 
 ./openvas-automate.sh $target
 
-scp ./$target.* root@$ip_server:/home/project/Scrivania/
+sshpass -p OpenVA94 scp ./*$target* $ip_server:/home/project/Scrivania/
